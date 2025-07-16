@@ -5,6 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import App from './App';
+import LoginPage from './pages/login';
+import RegisterPage from './pages/register';
+import UserPage from './pages/user';
+import ProductPage from './pages/product';
+import "./styles/global.css"
 
 // Router định nghĩa đường dẫn
 const router = createBrowserRouter([
@@ -14,21 +19,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <div>login page</div>
+    element: <LoginPage/>
   },
   {
     path: "/register",
-    element: <div>register page</div>
+    element: <RegisterPage/>
   }
   ,
   {
     path: "/users",
-    element: <div>users page</div>
+    element: <UserPage/>
   }
   ,
   {
     path: "/products",
-    element: <div>products page</div>
+    element: <ProductPage/>
   }
 ]);
 
