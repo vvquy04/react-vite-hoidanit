@@ -11,10 +11,13 @@ const App = () => {
       id: randomIntFromInterval(1, 1000000),
       name: name
     }
-
     setTodoList([...todoList, newTodo])
   }
 
+  const deletedTodo = (id) => {
+    const newTodo = todoList.filter(item => item.id != id)
+    setTodoList(newTodo)
+  }
   const randomIntFromInterval = (min, max) => { 
   return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -23,9 +26,10 @@ const App = () => {
       <div className="todo-title">Todo List</div>
       
       <TodoNew addNewTodo={addNewTodo} />
-   {todoList.length > 0 ?
-   <TodoData  
+      {todoList.length > 0 ?
+      <TodoData  
       todoList={todoList}
+      deletedTodo={deletedTodo}
       />
     :
     <img src={reactLogo} />
